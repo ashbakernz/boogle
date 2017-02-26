@@ -1,85 +1,47 @@
-<html>
-  <head>
-    <title>Boogle</title>
+<?php include 'partials/header.php'; ?>
 
-    <link rel="stylesheet" type="text/css" href="./css/app.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-  </head>
-  <body>
+<?php include 'partials/navigation.php'; ?>
 
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-          <div class="navbar-header">
-              <!-- Collapsed Hamburger -->
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                  <span class="sr-only">Toggle Navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
+<!-- Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h4>Search results for <strong>$searchQuery</strong></h4>
 
-              <!-- Branding Image -->
-              <a class="navbar-brand" href="index.php">
-                 <img width="80px" class="logo-top" src="img/logo.png"/>
-              </a>
+      <!-- Displayed results -->
+      <ul class="list-group">
+        <!-- Single Result -->
+        <li class="list-group-item notification-bar-fail m-b-1">
+          <div href="#" class="notification-bar-icon">
+            <div>
+              <i></i>
+            </div>
           </div>
-
-          <div class="collapse navbar-collapse" id="app-navbar-collapse">
-              <!-- Left Side Of Navbar -->
-              <ul class="nav navbar-nav">
-                <li>
-                    <div class="field top-bar-search" id="searchform">
-                      <input type="text" id="searchterm" value="$searchQuery" />
-                  </div>
-                </li>
-              </ul>
+          <div class="notification-bar-details">
+            <a href="#" class="notification-bar-title">
+              $searchResultTitle
+            </a>
+            <span class="text-muted">$searchResultUrl</span>
           </div>
-        </div>
-    </nav>
+        </li>
+        <!-- End of single result -->
 
-    <!-- Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h4>Search results for <strong>$searchQuery</strong></h4>
-
-          <!-- Displayed results -->
-          <ul class="list-group">
-          <!-- Single Result -->
-            <li class="list-group-item notification-bar-fail m-b-1">
-                <div href="#" class="notification-bar-icon">
-                  <div>
-                    <i></i>
-                  </div>
-                </div>
-                <div class="notification-bar-details">
-                  <a href="#" class="notification-bar-title">
-                  $searchResultTitle
-                  </a>
-                  <span class="text-muted">$searchResultUrl</span>
-                </div>
-            </li>
-            <!-- End of single result -->
-
-            <li class="list-group-item notification-bar-fail m-b-1">
-                <div href="#" class="notification-bar-icon">
-                  <div>
-                    <i></i>
-                  </div>
-                </div>
-                <div class="notification-bar-details">
-                  <a href="#" class="notification-bar-title">
-                  $searchResultTitle
-                  </a>
-                  <span class="text-muted">$searchResultUrl</span>
-                </div>
-            </li>
-          </ul>
-
-
-        </div>
-      </div>
+        <li class="list-group-item notification-bar-fail m-b-1">
+          <div href="#" class="notification-bar-icon">
+            <div>
+              <i></i>
+            </div>
+          </div>
+          <div class="notification-bar-details">
+            <a href="#" class="notification-bar-title">
+              $searchResultTitle
+            </a>
+            <span class="text-muted">$searchResultUrl</span>
+          </div>
+        </li>
+      </ul>
     </div>
-  </body>
-</html>
+  </div>
+</div>
 
+<?php include 'partials/footer.php'; ?>

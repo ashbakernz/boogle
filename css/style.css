@@ -60,21 +60,21 @@ h1{
 }
 
 .text-muted {
-    color: #b3b3b3 !important;
+  color: #b3b3b3 !important;
 }
 .notification-bar-details .notification-bar-title {
-    display: block;
+  display: block;
 }
 .m-b-1 {
-    margin-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 .list-group-item {
-    position: relative;
-    display: block;
-    padding: .75rem 1.25rem;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
 .top-bar-search{
   margin: 0.5em !important;
