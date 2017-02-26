@@ -20,7 +20,7 @@
               </button>
 
               <!-- Branding Image -->
-              <a class="navbar-brand" href="{{ url('/') }}">
+              <a class="navbar-brand" href="index.php">
                  <img width="80px" class="logo-top" src="img/logo.png"/>
               </a>
           </div>
@@ -29,14 +29,9 @@
               <!-- Left Side Of Navbar -->
               <ul class="nav navbar-nav">
                 <li>
-                  <a>
                     <div class="field top-bar-search" id="searchform">
-                      <input type="text" id="searchterm" placeholder="what do you want ?" />
-
-                      <button type="submit" id="search">Find</button>
-
+                      <input type="text" id="searchterm" value="$searchQuery" />
                   </div>
-                  </a>
                 </li>
               </ul>
           </div>
