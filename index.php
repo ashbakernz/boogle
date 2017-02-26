@@ -12,10 +12,13 @@
 <body>
   <h1><img class="logo" src="img/logo.png"/></h1>
 
-  <div class="field" id="searchform">
-    <input type="text" autofocus />
+  <form method="GET" action="results.php">
+    <div class="field" id="searchform">
+      <input type="text" name="q" autofocus />
 
-    <button type="submit" id="search">Search</button>
-  </div>
+      <button type="submit" id="search">Search</button>
+    </div>
+  </form>
+
 </body>
 </html>
