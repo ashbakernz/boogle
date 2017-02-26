@@ -1,22 +1,21 @@
-<html>
-  <head>
-    <title>Boogle Search</title>
+<!DOCTYPE html>
+<html lang="en-nz">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-  </head>
-  <body>
-      <h1><img class="logo" src="img/logo.png"/></h1>
+  <title>Boogle</title>
 
-      <div class="field" id="searchform">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1><img class="logo" src="img/logo.png"/></h1>
 
-          <input type="text" id="searchterm" placeholder="what do you want ?" />
+  <div class="field" id="searchform">
+    <input type="text" autofocus />
 
-          <button type="submit" id="search">Find</button>
+    <button type="submit" id="search">Search</button>
+  </div>
 
-
-
-      </div>
-
-  </body>
+</body>
 </html>
-
