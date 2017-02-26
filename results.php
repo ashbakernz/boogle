@@ -17,6 +17,7 @@
               <i></i>
             </div>
           </div>
+
           <div class="notification-bar-details">
             <a href="#" class="notification-bar-title">
               $searchResultTitle
