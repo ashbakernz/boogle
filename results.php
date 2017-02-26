@@ -24,9 +24,9 @@ if($searchQuery == 'doodles'){
   $searchQuery = $terms[0]['text'];
 }
 
-include 'partials/header.php'; ?>
-
-<?php include 'partials/navigation.php'; ?>
+include 'partials/header.php';
+include 'partials/navigation.php';
+?>
 
 <!-- Content -->
 <div class="container">
