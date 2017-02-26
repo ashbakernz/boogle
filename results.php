@@ -1,6 +1,6 @@
 <?php
 
-$searchQuery = $_GET['q'];
+$searchQuery = !empty($_GET['q'])? $_GET['q']: '';
 
 $data = array(
               array(
@@ -13,19 +13,21 @@ $data = array(
                     ),
               array(
                     'text' =>'I like Apples, Bread, and Cheese',
-                    'url' =>'https://wallaceandgrommit.com'
+                    'url' =>'http://www.wallaceandgromit.com/'
                     ),
               array(
                     'text' =>'I like Green Eggs and Ham',
-                    'url' =>'https://drseuss.com'
+                    'url' =>'http://www.seussville.com/'
                     )
               );
 
 $terms = [];
 
-foreach ($data as $key => $value) {
-  if (strpos(strtolower($value['text']), strtolower($searchQuery)) !== false) {
-    $terms[] = $value;
+if (!empty($searchQuery)) {
+  foreach ($data as $key => $value) {
+    if (strpos(strtolower($value['text']), strtolower($searchQuery)) !== false) {
+      $terms[] = $value;
+    }
   }
 }
 
