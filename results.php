@@ -70,4 +70,5 @@ include 'partials/header.php'; ?>
   </div>
 </div>
 
+<?php include 'partials/search-footer.php'; ?>
 <?php include 'partials/footer.php'; ?>
