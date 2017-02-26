@@ -1,4 +1,4 @@
-<?php
+<?php include 'includes/functions.php';
 
 $searchQuery = !empty($_GET['q'])? htmlspecialchars($_GET['q'], ENT_QUOTES, 'utf-8'): '';
 
@@ -8,10 +8,20 @@ $terms = [];
 
 if (!empty($searchQuery)) {
   foreach ($data as $key => $value) {
-    if (strpos(strtolower($value['text']), strtolower($searchQuery)) !== false) {
+    if (strpos(strtolower($value['text']), strtolower($searchQuery)) !== false || $searchQuery == 'nodoodlesfound') {
       $terms[] = $value;
     }
   }
+}
+
+if($searchQuery == 'nodoodlesfound'){
+  $searchQuery = '';
+}
+
+if($searchQuery == 'doodles'){
+  $terms = getRandomResult($data);
+
+  $searchQuery = $terms[0]['text'];
 }
 
 include 'partials/header.php'; ?>
@@ -22,8 +32,11 @@ include 'partials/header.php'; ?>
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h4>Search results for <strong><?=$searchQuery?></strong></h4>
-
+      <?php
+      if($searchQuery !== ''){
+        echo '<h4>Search results for <strong>' . $searchQuery . '</strong></h4>';
+      }
+      ?>
       <!-- Displayed results -->
       <ul class="list-group">
         <?php
@@ -34,7 +47,8 @@ include 'partials/header.php'; ?>
 
           <div class="notification-bar-details">
             <h3 class="notification-bar-title">
-              Nothing was found :(<br>
+
+              No results were found :(<br>
             </h3>
             <p>
               <strong>Suggestions:</strong>
@@ -42,6 +56,7 @@ include 'partials/header.php'; ?>
                 <li>Make sure that all words are spelled correctly.</li>
                 <li>Try different keywords.</li>
                 <li>Try more general keywords.</li>
+                <li><a href="results.php?q=nodoodlesfound">View all results.</a></li>
               </ul>
 
             </p>
@@ -77,5 +92,4 @@ include 'partials/header.php'; ?>
   </div>
 </div>
 
-<?php include 'partials/search-footer.php'; ?>
 <?php include 'partials/footer.php'; ?>

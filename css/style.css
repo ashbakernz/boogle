@@ -95,3 +95,9 @@ h1{
 .footer-bottom p.pull-left {
   padding-top: 6px;
 }
+.links{
+  text-align: center;
+}
+.links a{
+  text-decoration: none;
+}
