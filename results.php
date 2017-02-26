@@ -1,6 +1,6 @@
 <?php
 
-$searchQuery = !empty($_GET['q'])? $_GET['q']: '';
+$searchQuery = !empty($_GET['q'])? htmlspecialchars($_GET['q'], ENT_QUOTES, 'utf-8'): '';
 
 $data = require('includes/data.php');
 

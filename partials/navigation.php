@@ -21,7 +21,7 @@
       <li>
         <form method="GET" action="results.php">
           <div class="field top-bar-search" id="searchform">
-            <input type="text" name="q" value="<?=$searchQuery?>" />
+            <input type="text" name="q" autofocus value="<?=$searchQuery?>" />
           </div>
         </form>
       </li>
