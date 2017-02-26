@@ -19,9 +19,11 @@
     <!-- Left Side Of Navbar -->
     <ul class="nav navbar-nav">
       <li>
-        <div class="field top-bar-search" id="searchform">
-          <input type="text" id="searchterm" value="$searchQuery" />
-        </div>
+        <form method="GET" action="results.php">
+          <div class="field top-bar-search" id="searchform">
+            <input type="text" id="searchterm" value="<?=$searchQuery?>" />
+          </div>
+        </form>
       </li>
     </ul>
   </div>
