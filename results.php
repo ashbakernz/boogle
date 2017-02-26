@@ -2,24 +2,7 @@
 
 $searchQuery = !empty($_GET['q'])? $_GET['q']: '';
 
-$data = array(
-              array(
-                    'text' =>'I like Apples',
-                    'url' =>'https://apple.com'
-                    ),
-              array(
-                    'text' =>'I like Apples and Bread',
-                    'url' =>'https://bakersdelight.co.nz'
-                    ),
-              array(
-                    'text' =>'I like Apples, Bread, and Cheese',
-                    'url' =>'http://www.wallaceandgromit.com/'
-                    ),
-              array(
-                    'text' =>'I like Green Eggs and Ham',
-                    'url' =>'http://www.seussville.com/'
-                    )
-              );
+$data = require('includes/data.php');
 
 $terms = [];
 
@@ -44,6 +27,29 @@ include 'partials/header.php'; ?>
       <!-- Displayed results -->
       <ul class="list-group">
         <?php
+        if (empty($terms)):
+        ?>
+        <li class="list-group-item notification-bar-fail m-b-1">
+
+
+          <div class="notification-bar-details">
+            <h3 class="notification-bar-title">
+              Nothing was found :(<br>
+            </h3>
+            <p>
+              <strong>Suggestions:</strong>
+              <ul>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords.</li>
+                <li>Try more general keywords.</li>
+              </ul>
+
+            </p>
+          </div>
+        </li>
+        <!-- End of single result -->
+        <?php
+        else:
         foreach ($terms as $key => $term):
           ?>
         <!-- Single Result -->
@@ -64,6 +70,7 @@ include 'partials/header.php'; ?>
         <!-- End of single result -->
         <?php
         endforeach;
+        endif;
         ?>
       </ul>
     </div>
