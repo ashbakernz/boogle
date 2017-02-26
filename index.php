@@ -22,12 +22,10 @@
     </div>
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <form>
-        <a href="results.php?q=doodles">
-          I'm feeling lucky
-        </a>
-        </form>
+      <div class="col-md-6 links">
+          <a href="results.php?q=doodles">
+            I'm feeling lucky
+          </a>
       </div>
       <div class="col-md-3"></div>
     </div>
