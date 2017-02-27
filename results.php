@@ -1,4 +1,6 @@
-<?php include 'includes/functions.php';
+<?php
+require 'includes/config.php';
+require 'includes/functions.php';
 
 $searchQuery = !empty($_GET['q'])? htmlspecialchars($_GET['q'], ENT_QUOTES, 'utf-8'): '';
 
