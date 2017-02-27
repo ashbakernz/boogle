@@ -69,11 +69,6 @@ include 'partials/navigation.php';
           ?>
         <!-- Single Result -->
         <li class="list-group-item notification-bar-fail m-b-1">
-          <div href="#" class="notification-bar-icon">
-            <div>
-              <i></i>
-            </div>
-          </div>
 
           <div class="notification-bar-details">
             <a href="<?=$term['url']?>" class="notification-bar-title">
