@@ -4,8 +4,9 @@ require 'includes/functions.php';
 
 $searchQuery = !empty($_GET['q'])? htmlspecialchars($_GET['q'], ENT_QUOTES, 'utf-8'): '';
 
-$data = require('includes/data.php');
-
+// $data = require('includes/data.php');
+$data = $result;
+// die(var_dump($data));
 $terms = [];
 
 if (!empty($searchQuery)) {
