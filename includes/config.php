@@ -1,4 +1,5 @@
 <?php
+require 'includes/functions.php';
 
 $user = 'root';
 $pass = '';
@@ -6,11 +7,7 @@ $pass = '';
 try {
   $dbh = new PDO('mysql:host=localhost;dbname=boogle', $user, $pass);
 
-  $sth = $dbh->prepare("SELECT * FROM websites");
-  $sth->execute();
-
-  /* Fetch all of the remaining rows in the result set */
-  $result = $sth->fetchAll();
+  $result = getWebsiteTable($dbh);
 
   $dbh = null;
 } catch (PDOException $e) {
