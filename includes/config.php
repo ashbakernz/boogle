@@ -1,4 +1,5 @@
 <?php
+
 require 'includes/functions.php';
 
 $host = 'localhost';

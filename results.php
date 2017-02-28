@@ -18,10 +18,11 @@ if (!empty($searchQuery)) {
 if($searchQuery == 'nodoodlesfound'){
   $searchQuery = '';
   $terms = getWebsiteTable($dbh);
+  // $terms = require('includes/data.php');
 }
 
 if($searchQuery == 'doodles'){
-  $terms = getRandomResult($data);
+  $terms = getRandomResultUsingSQL($dbh);
 
   $searchQuery = $terms[0]['text'];
 }
