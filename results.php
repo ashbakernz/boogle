@@ -4,20 +4,20 @@ require 'includes/config.php';
 $searchQuery = !empty($_GET['q'])? htmlspecialchars($_GET['q'], ENT_QUOTES, 'utf-8'): '';
 
 // $data = require('includes/data.php');
-$data = $result;
+//Get them to call the function to grab all website rows and pass through the database connection.
+
+// $data = getWebsiteTable($dbh);
 // die(var_dump($data));
 $terms = [];
 
 if (!empty($searchQuery)) {
-  foreach ($data as $key => $value) {
-    if (strpos(strtolower($value['text']), strtolower($searchQuery)) !== false || $searchQuery == 'nodoodlesfound') {
-      $terms[] = $value;
-    }
-  }
+  // Do like query for $search
+   $terms = searchWebsiteTable($dbh, $searchQuery);
 }
 
 if($searchQuery == 'nodoodlesfound'){
   $searchQuery = '';
+  $terms = getWebsiteTable($dbh);
 }
 
 if($searchQuery == 'doodles'){
