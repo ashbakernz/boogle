@@ -6,7 +6,7 @@
 
 function connectDatabase($host, $database, $user, $pass){
   try {
-    $dbh = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $pass);
+    $dbh = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     return $dbh;
   } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
@@ -97,20 +97,20 @@ function searchWebsiteTable($dbh, $searchQuery){
 function insertIntoFeedbackTable($dbh, $name, $email, $feedback){
 
   //Prepare the statement that will be executed.
-  $sth = $dbh->prepare('INSERT INTO `feedback` values `:name`, `:email`, `:feedback`');
+  $sth = $dbh->prepare('INSERT INTO `feedback` VALUES (NULL, :name, :email, :feedback, NOW())');
 
   // Bind the "$name", "$email", "$feedback" the SQL statement.
   $sth->bindValue(':name', $name, PDO::PARAM_STR);
   $sth->bindValue(':email', $email, PDO::PARAM_STR);
-  $sth->bindValue(':feedback', $feedback, PDO::PARAM_STR);
+  $sth->bindValue(':feedback', $feedback);
 
   // Execute the statement.
   $sth->execute();
 
   // Get the results and save them so we can return it.
-  $result = $sth->fetchAll();
+  // $result = $sth->fetchAll();
 
-  return $result;
+  return true;
 }
 
 // -----------------------------------------------------------------------------
