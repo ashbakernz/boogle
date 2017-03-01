@@ -16,11 +16,11 @@ $dbh = connectDatabase($host, $database, $user, $pass);
 //   $dbh = new PDO('mysql:host=localhost;dbname=boogle', $user, $pass);
 
 //   // Get them to do this format first then change to a function.
-//   // $sth = $dbh->prepare("SELECT * FROM websites");
-//   // $sth->execute();
+//   $sth = $dbh->prepare("SELECT * FROM websites");
+//   $sth->execute();
 
-//   // $result = $sth->fetchAll();
-//   // die(var_dump($result));
+//   $result = $sth->fetchAll();
+//   die(var_dump($result));
 
 
 // } catch (PDOException $e) {
